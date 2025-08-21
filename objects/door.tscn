@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbqxqckg7u6xg"]
+
+[ext_resource type="Texture2D" uid="uid://d2kfujtknbwnf" path="res://objects/sprites/TX Props with Shadow.png" id="1_566yj"]
+[ext_resource type="Script" uid="uid://c2um8mtr3al3s" path="res://objects/scripts/door.gd" id="1_j7xx1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7xx1"]
+atlas = ExtResource("1_566yj")
+region = Rect2(14, 92, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khffo"]
+atlas = ExtResource("1_566yj")
+region = Rect2(14, 156, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4hvcy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7xx1")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khffo")
+}],
+"loop": true,
+"name": &"opened",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_566yj"]
+size = Vector3(0.373779, 0.358837, 0.357033)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j7xx1"]
+size = Vector3(0.217224, 0.256348, 0.36421)
+
+[node name="Door" type="StaticBody3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+collision_layer = 4
+script = ExtResource("1_j7xx1")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+layers = 2
+alpha_cut = 2
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_4hvcy")
+animation = &"closed"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0137939, -0.0275568, 0.0287492)
+shape = SubResource("BoxShape3D_566yj")
+
+[node name="TeleportArea" type="Area3D" parent="."]
+collision_layer = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleportArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0272522, 0.00903995, 0.124129)
+shape = SubResource("BoxShape3D_j7xx1")

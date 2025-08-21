@@ -1,0 +1,149 @@
+[gd_scene load_steps=18 format=3 uid="uid://c3eluajc4otcb"]
+
+[ext_resource type="PackedScene" uid="uid://bo42qarhghfwl" path="res://player/player.tscn" id="1_1qw3e"]
+[ext_resource type="PackedScene" uid="uid://h23wtm61l18l" path="res://objects/structure.tscn" id="2_2leci"]
+[ext_resource type="PackedScene" uid="uid://diy71cslmikry" path="res://objects/box.tscn" id="3_p50oj"]
+[ext_resource type="PackedScene" uid="uid://dvomv8qn5arn4" path="res://objects/struct_inv.tscn" id="3_x2olr"]
+[ext_resource type="PackedScene" uid="uid://dbqxqckg7u6xg" path="res://objects/door.tscn" id="5_1gvwg"]
+[ext_resource type="PackedScene" uid="uid://b7u3oumdvi0pd" path="res://objects/Gates/NOT_Gate.tscn" id="6_a65qk"]
+[ext_resource type="PackedScene" uid="uid://bnapmtbyto1bs" path="res://objects/PressurePlate.tscn" id="6_n0118"]
+[ext_resource type="PackedScene" uid="uid://dkcw23pmbhnra" path="res://objects/Gates/XOR_Gate.tscn" id="7_85sbg"]
+[ext_resource type="PackedScene" uid="uid://d2x85q4fnnlds" path="res://objects/Gates/AND_Gate.tscn" id="7_ocmas"]
+[ext_resource type="PackedScene" uid="uid://ckw8jtlwsklvx" path="res://objects/Platform.tscn" id="8_gk1qj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dtwn4"]
+sky_top_color = Color(0.401974, 0.601467, 0.869584, 1)
+sky_horizon_color = Color(1.16493, 1.26382, 1.3985, 1)
+ground_bottom_color = Color(0.403922, 0.6, 0.870588, 1)
+ground_horizon_color = Color(1.16493, 1.26382, 1.3985, 1)
+
+[sub_resource type="Sky" id="Sky_a65qk"]
+sky_material = SubResource("ProceduralSkyMaterial_dtwn4")
+
+[sub_resource type="Environment" id="Environment_1gvwg"]
+background_mode = 2
+sky = SubResource("Sky_a65qk")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ocmas"]
+sky_top_color = Color(0.401974, 0.601467, 0.869584, 1)
+sky_horizon_color = Color(1.16493, 1.26382, 1.3985, 1)
+ground_bottom_color = Color(0.403922, 0.6, 0.870588, 1)
+ground_horizon_color = Color(1.16493, 1.26382, 1.3985, 1)
+
+[sub_resource type="Sky" id="Sky_gk1qj"]
+sky_material = SubResource("ProceduralSkyMaterial_ocmas")
+
+[sub_resource type="Environment" id="Environment_dv837"]
+background_mode = 2
+sky = SubResource("Sky_gk1qj")
+
+[sub_resource type="PackedScene" id="PackedScene_a65qk"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Level_1", "Node3D", "WorldEnvironment", "environment", "Player", "transform", "Floors", "Node", "Ground", "collision_layer", "collision_mask", "Ground2", "Ground3", "Walls", "Wall", "Wall2", "Wall3", "Wall4", "Wall5", "Inv", "Inv_wall", "Inv_wall2", "Inv_wall3", "Box", "DirectionalLight3D", "light_indirect_energy", "shadow_enabled", "directional_shadow_mode", "Door", "required_plates", "next_level", "PressurePlate", "AndBox"),
+"node_count": 22,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 2, 2, -1, 1, 3, 0, 0, 0, 0, 2147483647, 4, 1, 1, 5, 2, 0, 0, 0, 7, 6, -1, 0, 0, 3, 0, 2147483647, 8, 3, 3, 5, 4, 9, 5, 10, 5, 0, 3, 0, 2147483647, 11, 3, 3, 5, 6, 9, 5, 10, 5, 0, 3, 0, 2147483647, 12, 3, 3, 5, 7, 9, 5, 10, 5, 0, 0, 0, 7, 13, -1, 0, 0, 7, 0, 2147483647, 14, 3, 3, 5, 8, 9, 5, 10, 5, 0, 7, 0, 2147483647, 15, 3, 3, 5, 9, 9, 5, 10, 5, 0, 7, 0, 2147483647, 16, 3, 3, 5, 10, 9, 5, 10, 5, 0, 7, 0, 2147483647, 17, 3, 3, 5, 11, 9, 5, 10, 5, 0, 7, 0, 2147483647, 18, 3, 3, 5, 12, 9, 5, 10, 5, 0, 7, 0, 7, 19, -1, 0, 0, 13, 0, 2147483647, 20, 13, 1, 5, 14, 0, 13, 0, 2147483647, 21, 13, 1, 5, 15, 0, 13, 0, 2147483647, 22, 13, 1, 5, 16, 0, 0, 0, 2147483647, 23, 17, 1, 5, 18, 0, 0, 0, 24, 24, -1, 4, 5, 19, 25, 20, 26, 21, 27, 22, 0, 0, 0, 2147483647, 28, 23, 3, 5, 24, 29, 25, 30, 17, 0, 0, 0, 2147483647, 31, 26, 3, 5, 27, 9, 5, 10, 5, 0, 0, 0, 2147483647, 32, 28, 2, 5, 29, 10, 30, 0),
+"variants": [SubResource("Environment_dv837"), ExtResource("1_1qw3e"), Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.28521, 0.876289, 0), ExtResource("2_2leci"), Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0), 3, Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 15, 7.5, 0, -2.5), Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 10, 12.5, 0, 0), Transform3D(10, 0, 0, 0, -4.37114e-08, -5, 0, 1, -2.18557e-07, 0, 3, -4.5), Transform3D(-2.18557e-07, -1, 0, -2.18557e-07, 1.91069e-15, -5, 5, -4.37114e-08, -2.18557e-07, 4.5, 3, -6.5), Transform3D(-2.18557e-07, -1, 0, -2.18557e-07, 1.91069e-15, -5, 5, -4.37114e-08, -2.18557e-07, 9.5, 3, -6.5), Transform3D(5, 0, 0, 0, -4.37114e-08, -5, 0, 1, -2.18557e-07, 12.5, 3, -4.5), Transform3D(6, 0, 0, 0, -4.37114e-08, -5, 0, 1, -2.18557e-07, 7, 3, -9.5), ExtResource("3_x2olr"), Transform3D(20, 0, 0, 0, -4.37114e-08, -5, 0, 1, -2.18557e-07, 5, 3, 5.5), Transform3D(-4.37114e-07, -1, 0, -4.37114e-07, 1.91069e-15, -5, 10, -4.37114e-08, -2.18557e-07, -5.5, 3, 0), Transform3D(-4.37114e-07, -1, 0, -4.37114e-07, 1.91069e-15, -5, 10, -4.37114e-08, -2.18557e-07, 15.5, 3, 0), ExtResource("3_p50oj"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82154, 0), Transform3D(-0.535377, 0.399698, 0.744052, -0.339656, -0.908452, 0.243615, 0.773308, -0.122296, 0.622124, 6.72265, 8.05176, 8.52613), 0.0, true, 0, ExtResource("5_1gvwg"), Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.8588, 1.136, -3.53682), Array[NodePath]([NodePath("../PressurePlate")]), ExtResource("6_n0118"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.15533, 0.55, -6.30945), ExtResource("7_ocmas"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.87639, 0.75, -2.26955), 5],
+"version": 3
+}
+
+[node name="Space" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1gvwg")
+
+[node name="Player" parent="." instance=ExtResource("1_1qw3e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.28521, 0.876289, 0)
+
+[node name="Floors" type="Node" parent="."]
+
+[node name="Ground" parent="Floors" instance=ExtResource("2_2leci")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground2" parent="Floors" instance=ExtResource("2_2leci")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 15, 7.5, 0, -2.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground3" parent="Floors" instance=ExtResource("2_2leci")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 10, 12.5, 0, 0)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource("2_2leci")]
+transform = Transform3D(10, 0, 0, 0, -4.37114e-08, -5, 0, 1, -2.18557e-07, 0, 3, -4.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Wall2" parent="Walls" instance=ExtResource("2_2leci")]
+transform = Transform3D(-1.74846e-07, -1, 2.18557e-07, 0, -4.37114e-08, -5, 4, -4.37114e-08, 9.55343e-15, 4.5, 3, -7)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Wall3" parent="Walls" instance=ExtResource("2_2leci")]
+transform = Transform3D(-1.74846e-07, -1, 2.18557e-07, 0, -4.37114e-08, -5, 4, -4.37114e-08, 9.55343e-15, 9.5, 3, -7)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Wall4" parent="Walls" instance=ExtResource("2_2leci")]
+transform = Transform3D(6, 0, 0, 0, -4.37114e-08, -5, 0, 1, -2.18557e-07, 12, 3, -4.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Wall5" parent="Walls" instance=ExtResource("2_2leci")]
+transform = Transform3D(6, 0, 0, 0, -4.37114e-08, -5, 0, 1, -2.18557e-07, 7, 3, -9.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Inv" type="Node" parent="Walls"]
+
+[node name="Inv_wall" parent="Walls/Inv" instance=ExtResource("3_x2olr")]
+transform = Transform3D(20, 0, 0, 0, -4.37114e-08, -5, 0, 1, -2.18557e-07, 5, 3, 5.5)
+
+[node name="Inv_wall2" parent="Walls/Inv" instance=ExtResource("3_x2olr")]
+transform = Transform3D(-4.37114e-07, -1, 0, -4.37114e-07, 1.91069e-15, -5, 10, -4.37114e-08, -2.18557e-07, -5.5, 3, 0)
+
+[node name="Inv_wall3" parent="Walls/Inv" instance=ExtResource("3_x2olr")]
+transform = Transform3D(-4.37114e-07, -1, 0, -4.37114e-07, 1.91069e-15, -5, 10, -4.37114e-08, -2.18557e-07, 15.5, 3, 0)
+
+[node name="Platform" type="Node" parent="."]
+
+[node name="Platform3" parent="Platform" instance=ExtResource("8_gk1qj")]
+transform = Transform3D(3, 0, 0, 0, 0.5, 0, 0, 0, 3, 4, 5, 1)
+
+[node name="Platform2" parent="Platform" instance=ExtResource("8_gk1qj")]
+transform = Transform3D(3, 0, 0, 0, 0.5, 0, 0, 0, 3, 9, 2.5, 1)
+
+[node name="AND_Gate" parent="Platform" instance=ExtResource("7_ocmas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65204, 0.75, 0.982356)
+
+[node name="NOT_Gate" parent="Platform" instance=ExtResource("6_a65qk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.769625, 0.75, 0.990327)
+
+[node name="XOR_Gate" parent="Platform" instance=ExtResource("7_85sbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1604, 0.75, -0.679096)
+
+[node name="PressurePlate" parent="." instance=ExtResource("6_n0118")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.55, -7)
+collision_layer = 3
+collision_mask = 3
+input_a = 1
+input_b = 1
+expected_output = 1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.85896, 0.512043, 0, -0.512043, 0.85896, 0, 10, 0)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+
+[node name="Door" parent="." instance=ExtResource("5_1gvwg")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.8588, 1.136, -3.53682)
+required_plates = Array[NodePath]([NodePath("../PressurePlate")])
+next_level = SubResource("PackedScene_a65qk")

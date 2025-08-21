@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkcw23pmbhnra"]
+
+[ext_resource type="PackedScene" uid="uid://diy71cslmikry" path="res://objects/box.tscn" id="1_rywxj"]
+[ext_resource type="Texture2D" uid="uid://pefn3t61mwf6" path="res://objects/sprites/GateSprites/XOR_gate.png" id="2_0rife"]
+[ext_resource type="Script" uid="uid://dxvbtgfnvu81t" path="res://objects/scripts/xor_gate.gd" id="2_idceo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idceo"]
+albedo_texture = ExtResource("2_0rife")
+
+[sub_resource type="BoxMesh" id="BoxMesh_aspjq"]
+material = SubResource("StandardMaterial3D_idceo")
+
+[node name="XOR_Gate" instance=ExtResource("1_rywxj")]
+script = ExtResource("2_idceo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" index="0"]
+mesh = SubResource("BoxMesh_aspjq")

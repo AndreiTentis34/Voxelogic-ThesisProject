@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxy3thgrjrb0c"]
+
+[ext_resource type="PackedScene" uid="uid://diy71cslmikry" path="res://objects/box.tscn" id="1_lt8t0"]
+[ext_resource type="Script" uid="uid://sxl1g3bygkmd" path="res://objects/scripts/or_gate.gd" id="2_3yvj7"]
+[ext_resource type="Texture2D" uid="uid://c73odr2pipi5s" path="res://objects/sprites/GateSprites/OR_gate.png" id="2_w7iwa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_njkcj"]
+albedo_texture = ExtResource("2_w7iwa")
+
+[sub_resource type="BoxMesh" id="BoxMesh_nu7e4"]
+material = SubResource("StandardMaterial3D_njkcj")
+
+[node name="OR_Gate" instance=ExtResource("1_lt8t0")]
+script = ExtResource("2_3yvj7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" index="0"]
+mesh = SubResource("BoxMesh_nu7e4")
+skeleton = NodePath("../..")

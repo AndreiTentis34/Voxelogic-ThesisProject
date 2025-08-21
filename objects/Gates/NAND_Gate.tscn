@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6dqjo6b1fuy0"]
+
+[ext_resource type="PackedScene" uid="uid://diy71cslmikry" path="res://objects/box.tscn" id="1_75e04"]
+[ext_resource type="Texture2D" uid="uid://do0o1eshd78uq" path="res://objects/sprites/GateSprites/NAND_gate.png" id="2_kcr1q"]
+[ext_resource type="Script" uid="uid://bj32rd6mj6kb4" path="res://objects/scripts/nand_gate.gd" id="2_tpper"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpper"]
+albedo_texture = ExtResource("2_kcr1q")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ad27a"]
+material = SubResource("StandardMaterial3D_tpper")
+
+[node name="NAND_Gate" instance=ExtResource("1_75e04")]
+script = ExtResource("2_tpper")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" index="0"]
+mesh = SubResource("BoxMesh_ad27a")

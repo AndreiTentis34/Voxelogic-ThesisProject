@@ -1,0 +1,108 @@
+[gd_scene load_steps=11 format=3 uid="uid://c3eluajc4otcb"]
+
+[ext_resource type="PackedScene" uid="uid://bo42qarhghfwl" path="res://player/player.tscn" id="1_1qw3e"]
+[ext_resource type="PackedScene" uid="uid://h23wtm61l18l" path="res://objects/structure.tscn" id="2_2leci"]
+[ext_resource type="PackedScene" uid="uid://diy71cslmikry" path="res://objects/box.tscn" id="3_p50oj"]
+[ext_resource type="PackedScene" uid="uid://dvomv8qn5arn4" path="res://objects/struct_inv.tscn" id="3_x2olr"]
+[ext_resource type="PackedScene" uid="uid://dbqxqckg7u6xg" path="res://objects/door.tscn" id="5_1gvwg"]
+[ext_resource type="PackedScene" uid="uid://bnapmtbyto1bs" path="res://objects/PressurePlate.tscn" id="6_n0118"]
+[ext_resource type="PackedScene" uid="uid://d2x85q4fnnlds" path="res://objects/AndBox.tscn" id="7_ocmas"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dtwn4"]
+sky_top_color = Color(0.401974, 0.601467, 0.869584, 1)
+sky_horizon_color = Color(1.16493, 1.26382, 1.3985, 1)
+ground_bottom_color = Color(0.403922, 0.6, 0.870588, 1)
+ground_horizon_color = Color(1.16493, 1.26382, 1.3985, 1)
+
+[sub_resource type="Sky" id="Sky_x2olr"]
+sky_material = SubResource("ProceduralSkyMaterial_dtwn4")
+
+[sub_resource type="Environment" id="Environment_1gvwg"]
+background_mode = 2
+sky = SubResource("Sky_x2olr")
+
+[node name="Space" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1gvwg")
+
+[node name="Player" parent="." instance=ExtResource("1_1qw3e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.28521, 0.876289, 0)
+
+[node name="Floors" type="Node" parent="."]
+
+[node name="Ground" parent="Floors" instance=ExtResource("2_2leci")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground2" parent="Floors" instance=ExtResource("2_2leci")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 15, 7.5, 0, -2.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground3" parent="Floors" instance=ExtResource("2_2leci")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 10, 12.5, 0, 0)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource("2_2leci")]
+transform = Transform3D(10, 0, 0, 0, -4.37114e-08, -5, 0, 1, -2.18557e-07, 0, 3, -4.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Wall2" parent="Walls" instance=ExtResource("2_2leci")]
+transform = Transform3D(-2.18557e-07, -1, 0, -2.18557e-07, 1.91069e-15, -5, 5, -4.37114e-08, -2.18557e-07, 4.5, 3, -6.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Wall3" parent="Walls" instance=ExtResource("2_2leci")]
+transform = Transform3D(-2.18557e-07, -1, 0, -2.18557e-07, 1.91069e-15, -5, 5, -4.37114e-08, -2.18557e-07, 9.5, 3, -6.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Wall4" parent="Walls" instance=ExtResource("2_2leci")]
+transform = Transform3D(5, 0, 0, 0, -4.37114e-08, -5, 0, 1, -2.18557e-07, 12.5, 3, -4.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Wall5" parent="Walls" instance=ExtResource("2_2leci")]
+transform = Transform3D(6, 0, 0, 0, -4.37114e-08, -5, 0, 1, -2.18557e-07, 7, 3, -9.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Inv" type="Node" parent="Walls"]
+
+[node name="Inv_wall" parent="Walls/Inv" instance=ExtResource("3_x2olr")]
+transform = Transform3D(20, 0, 0, 0, -4.37114e-08, -5, 0, 1, -2.18557e-07, 5, 3, 5.5)
+
+[node name="Inv_wall2" parent="Walls/Inv" instance=ExtResource("3_x2olr")]
+transform = Transform3D(-4.37114e-07, -1, 0, -4.37114e-07, 1.91069e-15, -5, 10, -4.37114e-08, -2.18557e-07, -5.5, 3, 0)
+
+[node name="Inv_wall3" parent="Walls/Inv" instance=ExtResource("3_x2olr")]
+transform = Transform3D(-4.37114e-07, -1, 0, -4.37114e-07, 1.91069e-15, -5, 10, -4.37114e-08, -2.18557e-07, 15.5, 3, 0)
+
+[node name="Box" parent="." instance=ExtResource("3_p50oj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82154, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.535377, 0.399698, 0.744052, -0.339656, -0.908452, 0.243615, 0.773308, -0.122296, 0.622124, 6.72265, 8.05176, 8.52613)
+light_indirect_energy = 0.0
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="Door" parent="." instance=ExtResource("5_1gvwg")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.8588, 1.136, -3.53682)
+required_plates = Array[NodePath]([NodePath("../PressurePlate")])
+next_level = null
+
+[node name="PressurePlate" parent="." instance=ExtResource("6_n0118")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.15533, 0.55, -6.30945)
+collision_layer = 3
+collision_mask = 3
+
+[node name="AndBox" parent="." instance=ExtResource("7_ocmas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.87639, 0.75, -2.26955)
+collision_mask = 5

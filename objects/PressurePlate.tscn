@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnapmtbyto1bs"]
+
+[ext_resource type="Script" uid="uid://cgsykgb3g4uyk" path="res://objects/scripts/pressureplate.gd" id="1_hjmrp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hjmrp"]
+albedo_color = Color(0.14902, 0.403922, 0.854902, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wlcij"]
+material = SubResource("StandardMaterial3D_hjmrp")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7pid"]
+size = Vector3(1, 0.1, 1)
+
+[node name="PressurePlate" type="Area3D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_hjmrp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_wlcij")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_p7pid")

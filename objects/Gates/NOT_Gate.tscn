@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7u3oumdvi0pd"]
+
+[ext_resource type="PackedScene" uid="uid://diy71cslmikry" path="res://objects/box.tscn" id="1_7smte"]
+[ext_resource type="Texture2D" uid="uid://ckeigdnv5sst0" path="res://objects/sprites/GateSprites/NOT_gate.png" id="2_qrjo5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p1sd5"]
+albedo_texture = ExtResource("2_qrjo5")
+
+[sub_resource type="BoxMesh" id="BoxMesh_tl4k4"]
+material = SubResource("StandardMaterial3D_p1sd5")
+
+[node name="NOT_Gate" instance=ExtResource("1_7smte")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" index="0"]
+mesh = SubResource("BoxMesh_tl4k4")

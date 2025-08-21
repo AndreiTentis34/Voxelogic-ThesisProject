@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://diy71cslmikry"]
+
+[ext_resource type="Script" uid="uid://k7co828n2el6" path="res://objects/scripts/LogicBox.gd" id="1_et42k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3sury"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fibqy"]
+
+[node name="Box" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 15
+script = ExtResource("1_et42k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_3sury")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+shape = SubResource("BoxShape3D_fibqy")

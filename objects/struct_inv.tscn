@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvomv8qn5arn4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e141x"]
+
+[node name="Structure" type="StaticBody3D"]
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_e141x")
+debug_color = Color(0.796078, 0, 0.831373, 1)

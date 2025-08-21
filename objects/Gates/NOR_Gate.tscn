@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://hxe8x83x5btf"]
+
+[ext_resource type="PackedScene" uid="uid://diy71cslmikry" path="res://objects/box.tscn" id="1_3jdwq"]
+[ext_resource type="Texture2D" uid="uid://caqehfcuolksa" path="res://objects/sprites/GateSprites/NOR_gate.png" id="2_joi7r"]
+[ext_resource type="Script" uid="uid://cp6pbdhc51vnb" path="res://objects/scripts/nor_gate.gd" id="2_oj32u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oj32u"]
+albedo_texture = ExtResource("2_joi7r")
+
+[sub_resource type="BoxMesh" id="BoxMesh_p3ge0"]
+material = SubResource("StandardMaterial3D_oj32u")
+
+[node name="NOR_Gate" instance=ExtResource("1_3jdwq")]
+script = ExtResource("2_oj32u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" index="0"]
+mesh = SubResource("BoxMesh_p3ge0")
